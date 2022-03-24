@@ -20,6 +20,11 @@
         </ul>
       </div>
     </nav>
+    <% if(message != "") {  %>
+      <section id="message">
+          <p><%= message %></p> <span id="close">&times;</span>
+      </section>
+  <% }  %>
     <main>
       <section class="cards">
         <h1>Pokédex</h1>
@@ -48,6 +53,6 @@
           >Monica Dias</a>
         <p>Todos os direitos reservados &copy;</p>
       </footer>
-    
+    <script src="/script.js"></script>
   </body>
 </html>
