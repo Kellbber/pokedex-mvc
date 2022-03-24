@@ -117,6 +117,12 @@ app.post("/atualizar/:id", (req, res) => {
 app.get("/deletar/:id", (req, res) => {
   const index = +req.params.id;
   pokedex.splice(index, 1)
+  message='';
+  message = `Seu Pokémon foi deletado com sucesso!`;
+  setTimeout(() => {
+    message = "";
+  }, 1000);
+  
   res.redirect("/#cards");
 });
 
