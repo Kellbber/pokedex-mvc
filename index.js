@@ -91,10 +91,13 @@ app.get("/cadastro/(:id)?", (req, res) => {
   const idPokemon = +req.params.id;
   pokemon = pokedex.find((pokemon) => pokemon.id == idPokemon);
   message = `Seu Pokémon foi atualizado com sucesso!`;
+  
   res.render("cadastro", { message, Pokemon: pokemon, Pokedex: pokedex });
+  
   }else{
   message = `Seu Pokémon foi criado com sucesso!`;
   res.render("cadastro", {message, Pokemon: pokemon, Pokedex: pokedex});
+  
   }
 
 });

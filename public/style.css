@@ -17,6 +17,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  overflow-x: hidden;
 }
 nav {
   height: 10rem;
