@@ -69,7 +69,7 @@ let message = "";
 
 app.get("/", (req, res) => {
 
-    res.render("index", {message, pokedex, pokemon});
+  res.render("index", {message, pokedex, pokemon});
   message='';
 
 });
