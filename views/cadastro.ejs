@@ -27,6 +27,11 @@
           <% if(Pokemon == undefined) { %>
           <h2>Cadastre um novo Pokémon!</h2>
           <form action="/formulario" method="POST">
+            <div class="cadastroNumero">
+              <label for="numero">Número:</label>
+              <input type="text" id="numero" name="numero" required />
+            </div>
+
             <div class="cadastroNome">
               <label for="nome">Nome:</label>
               <input type="text" id="nome" name="nome" required />

@@ -10,6 +10,7 @@ app.use(express.urlencoded());
 const pokedex = [
   {
     id: 1,
+    numero: 250,
     nome: "Ho-Oh",
     descricao:
       "As penas de Ho-Oh brilham em sete cores, dependendo do ângulo em que são atingidas pela luz. Dizem que essas penas trazem felicidade aos portadores. Dizem que este Pokémon vive ao pé de um arco-íris.",
@@ -23,6 +24,7 @@ const pokedex = [
   },
   {
     id: 2,
+    numero: 146,
     nome: "Moltres",
     descricao:
       "É um dos Pokémon pássaros lendários. Quando Moltres bate suas asas flamejantes, elas brilham com um brilho vermelho deslumbrante.",
@@ -36,6 +38,7 @@ const pokedex = [
   },
   {
     id: 3,
+    numero: 145,
     nome: "Zapdos",
     descricao:
       "Este Pokémon tem controle total sobre a eletricidade. Há histórias de Zapdos aninhando-se nas profundezas escuras de nuvens negras como breu.",
@@ -49,6 +52,7 @@ const pokedex = [
   },
   {
     id: 4,
+    numero: 144,
     nome: "Articuno",
     descricao:
       "Dizem que as belas asas azuis deste Pokémon são feitas de gelo. Articuno voa sobre montanhas nevadas, sua longa cauda esvoaçando atrás dele.",
