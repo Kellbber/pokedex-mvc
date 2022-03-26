@@ -72,8 +72,9 @@ let message = "";
 //rotas
 
 app.get("/", (req, res) => {
-  res.render("index", { pokedex, pokemon, message});
-  message='';
+
+  res.render("index", {message, pokedex, pokemon});
+
 });
 
 app.get("/curiosidade", (req, res) => {
@@ -86,21 +87,23 @@ app.post("/formulario", (req, res) => {
   nextId++
   pokedex.push(pokemon);
   pokemon = undefined;
+  message = `Seu Pokémon foi criado com sucesso!`;
+  setTimeout(() => {
+    message = "";
+  }, 1000);
   res.redirect("/#cards");
 });
 
 app.get("/cadastro/(:id)?", (req, res) => {
   if(!isNaN(+req.params.id)){
-  
   const idPokemon = +req.params.id;
   pokemon = pokedex.find((pokemon) => pokemon.id == idPokemon);
-  message = `Seu Pokémon foi atualizado com sucesso!`;
+
   
-  res.render("cadastro", { message, Pokemon: pokemon, Pokedex: pokedex });
-  
+  res.render("cadastro", {Pokemon: pokemon, Pokedex: pokedex});
   }else{
-  message = `Seu Pokémon foi criado com sucesso!`;
-  res.render("cadastro", {message, Pokemon: pokemon, Pokedex: pokedex});
+  
+  res.render("cadastro", {Pokemon: pokemon, Pokedex: pokedex});
   
   }
 
@@ -118,6 +121,10 @@ app.post("/atualizar/:id", (req, res) => {
   newPokemon.id = pokedex[index].id;
   pokedex[index] = newPokemon;
   pokemon = undefined;
+  message = `Seu Pokémon foi atualizado com sucesso!`;
+  setTimeout(() => {
+    message = "";
+  }, 1000);
   res.redirect("/#cards");
 });
 
@@ -129,7 +136,7 @@ app.get("/deletar/:id", (req, res) => {
   setTimeout(() => {
     message = "";
   }, 1000);
-  
+  console.log(pokedex)
   res.redirect("/#cards");
 });
 
